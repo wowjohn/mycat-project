@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  mycat:
+#    build: ./
+#    container_name: mycat
+    image: registry.cn-hangzhou.aliyuncs.com/jimu/mycat:1.6.7.5
+    volumes:
+      - ./conf:/home/mycat/conf
+      - ./logs:/home/mycat/logs
+    ulimits:
+      nproc: 65535
+    ports:
+      - "8066:8066"
+      - "9066:9066"
